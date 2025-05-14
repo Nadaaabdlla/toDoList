@@ -4,7 +4,10 @@
     font-size: 1.2rem;
     box-sizing: border-box;
 }
-
+html{
+    height: 100%;
+    width: 100%;
+}
 body {
     display: flex;
     justify-content: center;
@@ -25,7 +28,7 @@ body {
     gap: 5rem;
     padding-bottom: 10%;
     border-radius: 10px;
-
+width: max-content;
 
 }
 
@@ -35,7 +38,16 @@ body {
     align-items: center;
     gap: 1rem;
 }
-
+.newTaskContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.btnContainer{
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+}
 p {
     font-size: 5rem;
     text-align: center;
@@ -69,11 +81,15 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    color: black;
+    width: 80%;
 }
 
 li {
     display: flex;
+    flex-direction: row-reverse;
     gap: 10px;
+    color: black;
 }
 
 .line {
@@ -117,13 +133,4 @@ button {
 }
 #delete:active {
     color: rgb(146, 18, 8);
-}
-
-ul {
-    color: black;
-}
-
-li {
-    color: black;
-
 }
