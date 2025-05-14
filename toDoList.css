@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container1 {
+    position: relative;
+    bottom: -200px;
+    width: 50%;
+    background: none;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-bottom: 10%;
+    border-radius: 10px;
+
+
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+p {
+    font-size: 5rem;
+    text-align: center;
+    border: 1px solid white;
+    padding: 50px;
+    background-color: rgb(70, 41, 2);
+    color: white;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.filterContainer {
+    display: flex;
+    align-items: center;
+}
+
+#filterOption {
+    padding: 0 10px;
+}
+
+input,
+label {
+    padding: 0 5px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+li {
+    display: flex;
+    gap: 10px;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+.hidden {
+    display: none;
+}
+#delete,
+#filter,
+#add{
+    border: none;
+    font-size: 1.5rem;
+    background: none;
+    cursor: pointer;
+}
+button {
+    border: none;
+    font-size: 1rem;
+    background: none;
+    cursor: pointer;
+}
+.completBtn:active {
+    color: rgb(44, 124, 7);
+}
+#add :active {
+    color: rgb(44, 124, 7);
+}
+
+#filter:active {
+    color: rgb(70, 41, 2);
+
+}
+.editBtn:active{
+    color: rgb(70, 41, 2);
+
+}
+.deleteBtn:active {
+    color: rgb(146, 18, 8);
+}
+#delete:active {
+    color: rgb(146, 18, 8);
+}
+
+ul {
+    color: black;
+}
+
+li {
+    color: black;
+
+}
