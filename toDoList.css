@@ -8,6 +8,9 @@ html{
     height: 100%;
     width: 100%;
 }
+html::-webkit-scrollbar{
+   display: none;
+}
 body {
     display: flex;
     justify-content: center;
@@ -20,7 +23,7 @@ body {
 .container1 {
     position: relative;
     bottom: -200px;
-    width: 90%;
+    width: 50%;
     background: none;
     background-color: white;
     display: flex;
@@ -110,7 +113,10 @@ li {
     position: relative;
     right: 58px;
     color: white;
-    
+    cursor: pointer; 
+}
+#add:active {
+    background-color: #844E0B;
 }
 #filter{
     position: relative;
@@ -132,10 +138,6 @@ button {
 .completBtn:active {
     color: rgb(44, 124, 7);
 }
-#add :active {
-    color: #844E0B;
-}
-
 #filter:active {
     color: rgb(70, 41, 2);
 

@@ -1,5 +1,6 @@
 const add = document.getElementById("add");
 const taskInput = document.getElementById("taskInput");
+let tasksArray = [];
 function addTask() {
     let value = taskInput.value.trim();
     if (value !== "") {
@@ -9,8 +10,8 @@ function addTask() {
         newTask.classList.add("unlined");
         newTaskContainer.appendChild(newTask);
         newTask.innerText = value;
-        let tasksArray=[];
-        tasksArray.push(newTask);
+        tasksArray.push({ "task": value });
+        localStorage.setItem("Tasks", JSON.stringify(tasksArray));
         document.getElementById("list").appendChild(newTaskContainer);
         value = taskInput.value = "";
         value = taskInput.focus();
@@ -25,18 +26,18 @@ function addTask() {
             newTaskContainer.remove();
         });
         const completBtn = document.createElement("button");
-completBtn.setAttribute("data-checked", "false");
-completBtn.innerHTML = `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
+        completBtn.setAttribute("data-checked", "false");
+        completBtn.innerHTML = `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
         completBtn.classList.add("completBtn");
         newTask.appendChild(completBtn);
         completBtn.addEventListener("click", () => {
             const isChecked = completBtn.getAttribute("data-checked") === "true";
-completBtn.setAttribute("data-checked", !isChecked);
-completBtn.innerHTML = !isChecked ?
-    `<i class="fa-solid fa-circle-check" style="color: #b06100;"></i>` :
-    `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
-           const line= newTask.classList.toggle("line");
-           newTask.classList.toggle("unlined");
+            completBtn.setAttribute("data-checked", !isChecked);
+            completBtn.innerHTML = !isChecked ?
+                `<i class="fa-solid fa-circle-check" style="color: #b06100;"></i>` :
+                `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
+            const line = newTask.classList.toggle("line");
+            newTask.classList.toggle("unlined");
         });
         const editBtn = document.createElement("button");
         editBtn.innerHTML = `<i class="fa-solid fa-pen"></i>`;
@@ -49,18 +50,18 @@ completBtn.innerHTML = !isChecked ?
             newTask.appendChild(completBtn);
             const filter = document.getElementById("filter");
         });
-    const completFilter= document.getElementById("comp");
-    const pendingFilter= document.getElementById("pend");
-    completFilter.addEventListener("click", () => {
-        if (newTask.classList == "unlined") {
-   newTaskContainer.classList.toggle("hidden");
-}
-    });
-    pendingFilter.addEventListener("click", () => {
-    if (newTask.classList == "line") {
-        newTaskContainer.classList.toggle("hidden");
-    }
-});
+        const completFilter = document.getElementById("comp");
+        const pendingFilter = document.getElementById("pend");
+        completFilter.addEventListener("click", () => {
+            if (newTask.classList == "unlined") {
+                newTaskContainer.classList.toggle("hidden");
+            }
+        });
+        pendingFilter.addEventListener("click", () => {
+            if (newTask.classList == "line") {
+                newTaskContainer.classList.toggle("hidden");
+            }
+        });
     } else {
         alert("enter a task");
     }
@@ -73,12 +74,10 @@ add.addEventListener("click", () => {
 });
 taskInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        addTask();
+        tasksArray.task = addTask();
     }
 });
 filter.addEventListener("click", () => {
     const filterOption = document.getElementById("filterOption");
     filterOption.classList.toggle("hidden");
 });
-localStorage.setItem("tasksArray",JSON.stringify(tasksArray));
-addTask(JSON.parse(localStorage.setItem("tasksArray")));
