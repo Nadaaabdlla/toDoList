@@ -9,6 +9,8 @@ function addTask() {
         newTask.classList.add("unlined");
         newTaskContainer.appendChild(newTask);
         newTask.innerText = value;
+        let tasksArray=[];
+        tasksArray.push(newTask);
         document.getElementById("list").appendChild(newTaskContainer);
         value = taskInput.value = "";
         value = taskInput.focus();
@@ -78,3 +80,5 @@ filter.addEventListener("click", () => {
     const filterOption = document.getElementById("filterOption");
     filterOption.classList.toggle("hidden");
 });
+localStorage.setItem("tasksArray",JSON.stringify(tasksArray));
+addTask(JSON.parse(localStorage.setItem("tasksArray")));

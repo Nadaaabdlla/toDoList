@@ -51,7 +51,7 @@ input{
     gap: 1rem;
     width: fit-content;
 }
-p {
+p{
     font-size: 5rem;
     text-align: center;
     border: 1px solid white;
