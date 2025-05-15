@@ -135,9 +135,7 @@ button {
     background: none;
     cursor: pointer;
 }
-.completBtn:active {
-    color: rgb(44, 124, 7);
-}
+
 #filter:active {
     color: rgb(70, 41, 2);
 
