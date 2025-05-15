@@ -25,15 +25,15 @@ function addTask() {
         deleteBtn.addEventListener("click", () => {
             newTaskContainer.remove();
         });
-        const completBtn = document.createElement("button");
-        completBtn.setAttribute("data-checked", "false");
-        completBtn.innerHTML = `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
-        completBtn.classList.add("completBtn");
-        newTask.appendChild(completBtn);
-        completBtn.addEventListener("click", () => {
-            const isChecked = completBtn.getAttribute("data-checked") === "true";
-            completBtn.setAttribute("data-checked", !isChecked);
-            completBtn.innerHTML = !isChecked ?
+        const completeBtn = document.createElement("button");
+        completeBtn.setAttribute("data-checked", "false");
+        completeBtn.innerHTML = `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
+        completeBtn.classList.add("completeBtn");
+        newTask.appendChild(completeBtn);
+        completeBtn.addEventListener("click", () => {
+            const isChecked = completeBtn.getAttribute("data-checked") === "true";
+            completeBtn.setAttribute("data-checked", !isChecked);
+            completeBtn.innerHTML = !isChecked ?
                 `<i class="fa-solid fa-circle-check" style="color: #b06100;"></i>` :
                 `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
             const line = newTask.classList.toggle("line");
@@ -47,12 +47,12 @@ function addTask() {
         editBtn.addEventListener("click", () => {
             newTask.innerText = prompt("Enter new text");
             newTaskContainer.appendChild(btnContainer);
-            newTask.appendChild(completBtn);
+            newTask.appendChild(completeBtn);
             const filter = document.getElementById("filter");
         });
-        const completFilter = document.getElementById("comp");
+        const completeFilter = document.getElementById("comp");
         const pendingFilter = document.getElementById("pend");
-        completFilter.addEventListener("click", () => {
+        completeFilter.addEventListener("click", () => {
             if (newTask.classList == "unlined") {
                 newTaskContainer.classList.toggle("hidden");
             }
