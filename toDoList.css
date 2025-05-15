@@ -135,7 +135,6 @@ button {
     background: none;
     cursor: pointer;
 }
-
 #filter:active {
     color: rgb(70, 41, 2);
 
