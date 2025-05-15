@@ -48,7 +48,6 @@ function addTask() {
             newTask.innerText = prompt("Enter new text");
             newTaskContainer.appendChild(btnContainer);
             newTask.appendChild(completeBtn);
-            const filter = document.getElementById("filter");
         });
         const completeFilter = document.getElementById("comp");
         const pendingFilter = document.getElementById("pend");
