@@ -6,6 +6,7 @@ function addTask() {
         const newTaskContainer = document.createElement("div");
         newTaskContainer.classList.add("newTaskContainer");
         const newTask = document.createElement("li");
+        newTask.classList.add("unlined");
         newTaskContainer.appendChild(newTask);
         newTask.innerText = value;
         document.getElementById("list").appendChild(newTaskContainer);
@@ -33,6 +34,7 @@ completBtn.innerHTML = !isChecked ?
     `<i class="fa-solid fa-circle-check" style="color: #b06100;"></i>` :
     `<i class="fa-regular fa-circle" style="color: #b06100;"></i>`;
            const line= newTask.classList.toggle("line");
+           newTask.classList.toggle("unlined");
         });
         const editBtn = document.createElement("button");
         editBtn.innerHTML = `<i class="fa-solid fa-pen"></i>`;
@@ -48,7 +50,7 @@ completBtn.innerHTML = !isChecked ?
     const completFilter= document.getElementById("comp");
     const pendingFilter= document.getElementById("pend");
     completFilter.addEventListener("click", () => {
-        if (newTask.classList == "line") {
+        if (newTask.classList == "unlined") {
    newTaskContainer.classList.toggle("hidden");
 }
     });

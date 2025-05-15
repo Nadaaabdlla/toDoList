@@ -20,22 +20,25 @@ body {
 .container1 {
     position: relative;
     bottom: -200px;
-    width: 50%;
+    width: 90%;
     background: none;
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 5rem;
     padding-bottom: 10%;
     border-radius: 10px;
-width: max-content;
 
 }
-
+input{
+    accent-color: #b06100;
+}
 .container2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
 .newTaskContainer{
@@ -69,7 +72,8 @@ p {
 }
 
 #filterOption {
-    padding: 0 10px;
+    position: relative;
+right: 30px;
 }
 
 input,
@@ -99,9 +103,21 @@ li {
 .hidden {
     display: none;
 }
-#delete,
-#filter,
 #add{
+    border-radius: 5px;
+    background-color:#b06100 ;
+    padding:6px 15px;
+    position: relative;
+    right: 58px;
+    color: white;
+    
+}
+#filter{
+    position: relative;
+right: 48px;
+}
+#delete,
+#filter{
     border: none;
     font-size: 1.5rem;
     background: none;
@@ -117,7 +133,7 @@ button {
     color: rgb(44, 124, 7);
 }
 #add :active {
-    color: rgb(44, 124, 7);
+    color: #844E0B;
 }
 
 #filter:active {
